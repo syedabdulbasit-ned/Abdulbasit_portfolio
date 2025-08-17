@@ -1,63 +1,49 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
+
+// import Navbar from "./components/Navbar";
+// import Hero from "./components/Hero";
+// import About from "./components/About";
 
 // function App() {
-//   const [count, setCount] = useState(0)
-
 //   return (
 //     <>
-//       <div>
-//         <a href="https://vite.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.jsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
+//       <Navbar />
+//       <Hero />
+//       <About />
 //     </>
-//   )
-// }
-
-// export default App
-// function App() {
-//   return (
-//     <div className="flex items-center justify-center h-screen bg-gray-100">
-//       <h1 className="text-5xl font-bold text-blue-600">
-//         Tailwind v4 Works 🎉
-//       </h1>
-//     </div>
 //   );
-// }
+// }  
 
 // export default App;
+ 
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Skills from "./components/Skills";
+// (Later: Skills, Projects, Contact)
 
 function App() {
   return (
-    <>
+    <div className="App font-sans">
       <Navbar />
-      <Hero />
-      <About />
-    </>
+      <section id="hero">
+        <Hero />
+      </section>
+      <section id="about" className="pt-20">
+        <About />
+      </section>
+      <section id="skills" className="pt-20">
+        <h2 className="text-center text-3xl font-bold">Skills</h2>
+      </section>
+      <section id="projects" className="pt-20">
+        <h2 className="text-center text-3xl font-bold">Projects</h2>
+      </section>
+      <section id="contact" className="pt-20">
+        <h2 className="text-center text-3xl font-bold">Contact</h2>
+      </section>
+      <Skills />
+    </div>
   );
-}  
+}
 
 export default App;
- 
