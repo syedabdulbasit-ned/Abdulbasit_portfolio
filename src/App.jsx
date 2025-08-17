@@ -33,14 +33,29 @@
 // }
 
 // export default App
+// function App() {
+//   return (
+//     <div className="flex items-center justify-center h-screen bg-gray-100">
+//       <h1 className="text-5xl font-bold text-blue-600">
+//         Tailwind v4 Works 🎉
+//       </h1>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+
 function App() {
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <h1 className="text-5xl font-bold text-blue-600">
-        Tailwind v4 Works 🎉
-      </h1>
-    </div>
+    <>
+      <Navbar />
+      <Hero />
+    </>
   );
-}
+}  
 
 export default App;
+ 
