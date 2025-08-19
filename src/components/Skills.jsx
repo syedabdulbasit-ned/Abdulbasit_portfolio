@@ -1,6 +1,36 @@
-import React from 'react';
-// src/components/Skills.jsx
 const Skills = () => {
+  const skillCategories = [
+    {
+      title: "Frontend",
+      skills: [
+        { name: "React", icon: "devicon-react-original colored" },
+        { name: "HTML", icon: "devicon-html5-plain colored" },
+        { name: "CSS", icon: "devicon-css3-plain colored" },
+        { name: "TailwindCSS", icon: "devicon-tailwindcss-plain colored" },
+      ],
+    },
+    {
+      title: "Backend",
+      skills: [
+        { name: "Node.js", icon: "devicon-nodejs-plain colored" },
+        { name: "Django", icon: "devicon-django-plain colored" },
+      ],
+    },
+    {
+      title: "Programming",
+      skills: [
+        { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+        { name: "Python", icon: "devicon-python-plain colored" },
+      ],
+    },
+    {
+      title: "Databases",
+      skills: [
+        { name: "MongoDB", icon: "devicon-mongodb-plain colored" },
+      ],
+    },
+  ];
+
   return (
     <section id="skills" className="py-20 bg-gray-100 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-6">
@@ -8,47 +38,31 @@ const Skills = () => {
           Skills
         </h2>
 
-        {/* Flex row with left alignment */}
-        <div className="flex flex-wrap justify-start gap-x-12 gap-y-20>
-          <div className="flex flex-col items-center w-1/4">
-            <i className="devicon-react-original colored text-[90px] hover:scale-125 transition-transform duration-300"></i>
-            <p className="mt-4 text-xl font-semibold">React</p>
-          </div>
-          <div className="flex flex-col items-center w-1/4">
-            <i className="devicon-html5-plain colored text-[90px] hover:scale-125 transition-transform duration-300"></i>
-            <p className="mt-4 text-xl font-semibold">HTML</p>
-          </div>
-          <div className="flex flex-col items-center w-1/4">
-            <i className="devicon-css3-plain colored text-[90px] hover:scale-125 transition-transform duration-300"></i>
-            <p className="mt-4 text-xl font-semibold">CSS</p>
-          </div>
-          <div className="flex flex-col items-center w-1/4">
-            <i className="devicon-javascript-plain colored text-[90px] hover:scale-125 transition-transform duration-300"></i>
-            <p className="mt-4 text-xl font-semibold">JavaScript</p>
-          </div>
-          <div className="flex flex-col items-center w-1/4">
-            <i className="devicon-tailwindcss-plain colored text-[90px] hover:scale-125 transition-transform duration-300"></i>
-            <p className="mt-4 text-xl font-semibold">TailwindCSS</p>
-          </div>
-          <div className="flex flex-col items-center w-1/4">
-            <i className="devicon-nodejs-plain colored text-[90px] hover:scale-125 transition-transform duration-300"></i>
-            <p className="mt-4 text-xl font-semibold">Node.js</p>
-          </div>
-          <div className="flex flex-col items-center w-1/4">
-            <i className="devicon-django-plain colored text-[90px] hover:scale-125 transition-transform duration-300"></i>
-            <p className="mt-4 text-xl font-semibold">Django</p>
-          </div>
-          <div className="flex flex-col items-center w-1/4">
-            <i className="devicon-python-plain colored text-[90px] hover:scale-125 transition-transform duration-300"></i>
-            <p className="mt-4 text-xl font-semibold">Python</p>
-          </div>
-          <div className="flex flex-col items-center w-1/4">
-            <i className="devicon-mongodb-plain colored text-[90px] hover:scale-125 transition-transform duration-300"></i>
-            <p className="mt-4 text-xl font-semibold">MongoDB</p>
-          </div>
+        {/* Loop through categories */}
+        <div className="space-y-16">
+          {skillCategories.map((category, index) => (
+            <div key={index}>
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-8">
+                {category.title}
+              </h3>
+
+              {/* Skills inside category */}
+              <div className="flex flex-wrap justify-start gap-x-12 gap-y-12">
+                {category.skills.map((skill, idx) => (
+                  <div key={idx} className="flex flex-col items-center w-1/4">
+                    <i
+                      className={`${skill.icon} text-[90px] hover:scale-125 transition-transform duration-300`}
+                    ></i>
+                    <p className="mt-4 text-xl font-semibold">{skill.name}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
+
 export default Skills;
