@@ -48,6 +48,7 @@
 // }
 
 // src/components/Navbar.jsx
+// src/components/Navbar.jsx
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -62,48 +63,58 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <h1 className="text-2xl font-bold text-indigo-600">MyPortfolio</h1>
+    <>
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          {/* Logo */}
+          <h1 className="text-xl font-semibold tracking-wide text-indigo-600">
+            MyPortfolio
+          </h1>
 
-        {/* Desktop Links */}
-        <ul className="hidden md:flex space-x-8 text-gray-700 font-medium">
-          {navItems.map((item) => (
-            <li key={item.label}>
-              <a
-                href={item.href}
-                className="hover:text-indigo-600 transition-colors duration-300"
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+          {/* Desktop Menu */}
+          <ul className="hidden md:flex space-x-8 text-gray-700 font-medium">
+            {navItems.map((item) => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  className="hover:text-indigo-600 transition-colors duration-300"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-        {/* Mobile Menu Button */}
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-gray-700"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+      </nav>
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <ul className="md:hidden flex flex-col space-y-4 px-6 pb-6 text-gray-700 font-medium bg-white shadow-md">
-          {navItems.map((item) => (
-            <li key={item.label}>
-              <a
-                href={item.href}
-                onClick={() => setIsOpen(false)} // close after click
-                className="hover:text-indigo-600 transition-colors duration-300"
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="md:hidden bg-white shadow-lg">
+          <ul className="flex flex-col items-center space-y-4 py-6 text-gray-700 font-medium">
+            {navItems.map((item) => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  onClick={() => setIsOpen(false)} // Close menu after click
+                  className="hover:text-indigo-600 transition-colors duration-300"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
-    </nav>
+    </>
   );
 };
 
