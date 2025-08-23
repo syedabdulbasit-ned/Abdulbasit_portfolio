@@ -3,9 +3,9 @@ import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "Weather Monitoring System",
+    title: "Image Generation Using Genetic Algorithm",
     description:
-      "An IoT-based system using ESP32 and sensors to monitor temperature, humidity, and air quality in real-time.",
+      "This project uses a Genetic Algorithm to evolve random noise into a target image. Through cycles of selection, crossover, and mutation, the pixel population converges to a near-perfect replica.",
     tech: ["ESP32", "DHT11", "MQ135", "FastAPI", "SQLite"],
     github: "https://github.com/your-username/weather-monitoring",
     demo: "https://your-live-demo.com",
