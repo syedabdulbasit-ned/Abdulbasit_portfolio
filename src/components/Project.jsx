@@ -5,8 +5,8 @@ const projects = [
   {
     title: "Image Generation Using Genetic Algorithm",
     description:
-      "This project uses a Genetic Algorithm to evolve random noise into a target image. Through cycles of selection, crossover, and mutation, the pixel population converges to a near-perfect replica.",
-    tech: ["ESP32", "DHT11", "MQ135", "FastAPI", "SQLite"],
+      "Developed a Django-based web application that leverages genetic algorithms to recreate target images. The system simulates evolutionary processes—mutation, crossover, and selection—to iteratively improve image accuracy, providing an interactive and visual demonstration of evolutionary computing principles.",
+    tech: ["AI", "Genetic Algorithm", "Django"],
     github: "https://github.com/your-username/weather-monitoring",
     demo: "https://your-live-demo.com",
     image: "https://via.placeholder.com/400x250", // replace with your project screenshot
